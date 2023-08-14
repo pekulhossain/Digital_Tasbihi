@@ -8,39 +8,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="mt-20">
-    <h1 class="text-center mb-8 font-bold text-2xl">Digital Tasbih</h1>
+    <h1 class="text-center mb-8 font-bold text-2xl text-green-600">Digital Tasbih</h1>
      <div class="flex gap-4 text-center justify-center">
-        <div class="border border-1 border-gray-600 w-64 h-40 p-4 shadow-lg rounded">
-            <h3 class="mb-6 text-lg font-semibold">Subhan Allah </h3>
+        
+        <div class="border border-1 border-gray-600 w-64 h-40 p-4 rounded">
+            <h3 class="mb-6 text-lg font-semibold text-green-600">Subhan Allah </h3>
             <p id="subhanallahcount" class="mb-6 font-semibold text-lg"> 0 </p>
             <button id="subhanallahincrementbtn" class=" p-1 w-24 h-8 rounded-lg bg-green-500 text-white">Incriment </button>
             <button id="subhanallahdecrementbtn" class="p-1 w-24 h-8 rounded-lg bg-red-600 text-white">Decriment </button>
         </div>
+        
         <div class="border border-1 border-gray-600 w-64 h-40 p-4 rounded">
-            <h3 class="mb-6 text-lg font-semibold">Alhamdulillah</h3>
+            <h3 class="mb-6 text-lg font-semibold text-green-600">Alhamdulillah</h3>
             <p id="alhamdulliahcount" class="mb-6 font-semibold text-lg"> 0 </p>
-            <button class=" p-1 w-24 h-8 rounded-lg bg-green-500 text-white">Incriment </button>
-            <button class="p-1 w-24 h-8 rounded-lg bg-red-600 text-white">Decriment </button>
+            <button id="alhamdulliahincrementbtn" class=" p-1 w-24 h-8 rounded-lg bg-green-500 text-white">Incriment </button>
+            <button id="alhamdulliahdecrementbtn" class="p-1 w-24 h-8 rounded-lg bg-red-600 text-white">Decriment </button>
         </div>
+        
         <div class="border border-1 border-gray-600 w-64 h-40 p-4 rounded">
-            <h3 class="mb-6 text-lg font-semibold">Allahu akbar </h3>
-            <p id="allahuakbercount" class="mb-6 font-semibold text-lg"> 0 </p>
-            <button class=" p-1 w-24 h-8 rounded-lg bg-green-500 text-white">Incriment </button>
-            <button class="p-1 w-24 h-8 rounded-lg bg-red-600 text-white">Decriment </button>
+            <h3 class="mb-6 text-lg font-semibold text-green-600">Allahu akbar </h3>
+            <p id="Allahuakbercount" class="mb-6 font-semibold text-lg"> 0 </p>
+            <button id="Allahuakbarincrimentbtn" class=" p-1 w-24 h-8 rounded-lg bg-green-500 text-white">Incriment </button>
+            <button id="Allahuakbardecrimentbtn" class="p-1 w-24 h-8 rounded-lg bg-red-600 text-white">Decriment </button>
         </div>
     
      </div>
+    <!--  <div class="flex gap-4 text-center justify-center items-center mt-8">
+        <p class=" font-extrabold text-2xl text-center"> Total : </p>
+        <p id="totalcount" class="font-bold text-xl text-center items-center justify-self-center">0</p>
+     </div> -->
 <script>
     let subhanallahcountnumber = 0;
+    let alhamdulliahcountnumber = 0;
+    let allahuakbercountnumber = 0;
+   /*  subanallah section */
     let subhanallahincrementbtn = document.getElementById('subhanallahincrementbtn');
     const subhanallahdecrementbtn = document.getElementById('subhanallahdecrementbtn');
-    subhanallahincrementbtn.addEventListener('click',function(){
+    subhanallahincrementbtn.addEventListener('click',function subanallah(){
         if(subhanallahcountnumber === 33){
             return alert('Subahan Allah Completed')
         }
         subhanallahcountnumber = subhanallahcountnumber+1;
-        subhanallahcount.innerHTML = subhanallahcountnumber;          
+        subhanallahcount.innerHTML = subhanallahcountnumber;
+            
     })
+   
     subhanallahdecrementbtn.addEventListener('click',function(){
         if(subhanallahcountnumber === 0){
             return alert('Number not less than 0')
@@ -48,6 +60,45 @@
         subhanallahcountnumber = subhanallahcountnumber-1;
         subhanallahcount.innerHTML = subhanallahcountnumber;
     })
+    
+  /*  alhamdulliah section */
+  let alhamdulliahincrementbtn = document.getElementById('alhamdulliahincrementbtn');
+    const alhamdulliahdecrementbtn = document.getElementById('alhamdulliahdecrementbtn');
+    alhamdulliahincrementbtn.addEventListener('click',function(){
+        if(alhamdulliahcountnumber === 33){
+            return alert('Alhamdulliah Completed')
+        }
+        alhamdulliahcountnumber = alhamdulliahcountnumber+1;
+        alhamdulliahcount.innerHTML = alhamdulliahcountnumber;          
+    })
+    alhamdulliahdecrementbtn.addEventListener('click',function(){
+        if(alhamdulliahcountnumber === 0){
+            return alert('Number not less than 0')
+        }
+        alhamdulliahcountnumber = alhamdulliahcountnumber-1;
+        alhamdulliahcount.innerHTML = alhamdulliahcountnumber;
+    })
+      /*  Allahu akbar section */
+     let Allahuakbarincrimentbtn = document.getElementById('Allahuakbarincrimentbtn');
+    const Allahuakbardecrimentbtn = document.getElementById('Allahuakbardecrimentbtn');
+    Allahuakbarincrimentbtn.addEventListener('click',function(){
+        if(allahuakbercountnumber === 34){
+            return alert('Allahu akbar Completed')
+        }
+        allahuakbercountnumber = allahuakbercountnumber+1;
+        Allahuakbercount.innerHTML = allahuakbercountnumber;          
+    })
+    Allahuakbardecrimentbtn.addEventListener('click',function(){
+        if(allahuakbercountnumber === 0){
+            return alert('Number not less than 0')
+        }
+        allahuakbercountnumber = allahuakbercountnumber-1;
+        Allahuakbercount.innerHTML = allahuakbercountnumber;
+    }
+   
+    )
+    
+ 
 
 
 </script>
